@@ -10,9 +10,47 @@
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
       rel="stylesheet"
     />
+    <style>
+      tr.highlight td {
+        background-color: #fff3cd !important;
+      }
+    </style>
   </head>
   <body>
-    <main>🧮 Calculator</main>
+    <main class="container mt-5 mb-5 pb-5">
+      <h1 class="mb-4">🧮 Calculator</h1>
+
+      <table class="table">
+        <thead class="table-dark">
+          <tr>
+            <th>Name</th>
+            <th>Equation</th>
+            <th>Result</th>
+            <th>Unit</th>
+            <th><button class="btn btn-primary btn-sm">Add</button></th>
+          </tr>
+        </thead>
+        <tbody id="calculations-body">
+          <tr>
+            <td><input type="text" class="form-control" placeholder="Name" /></td>
+            <td><input type="text" class="form-control equation-input" placeholder="Equation" /></td>
+            <td class="result-cell"></td>
+            <td>
+              <select class="form-select form-select-sm unit-select">
+                <option value="number">number</option>
+                <option value="%">%</option>
+                <option value="euro">€</option>
+              </select>
+            </td>
+            <td><button class="btn btn-danger btn-sm delete-btn">Delete</button></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <button class="btn btn-primary mt-3" id="add-bottom-btn">Add</button>
+    </main>
+
+    <div id="autocomplete-popup" style="display: none; position: fixed; background: white; border: 1px solid #ddd; border-radius: 4px; max-height: 200px; overflow-y: auto; z-index: 1000; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></div>
 
     <script
       crossorigin="anonymous"
